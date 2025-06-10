@@ -11,6 +11,7 @@ func main() {
 	defer db.Close()
 
 	http.HandleFunc("/students", studentsHandler)
+	http.HandleFunc("/student", getStudentHandler)
 
 	fmt.Println("Server running on http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))

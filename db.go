@@ -11,7 +11,7 @@ var db *sql.DB
 
 func initDB() {
 	var err error
-	dsn := "Students:ranaRAND1.@tcp(127.0.0.1:3306)/myproject"
+	dsn := "Students:rana@tcp(127.0.0.1:3306)/myproject"
 	db, err = sql.Open("mysql", dsn)
 	if err != nil {
 		log.Fatal(err)
@@ -19,4 +19,5 @@ func initDB() {
 	if err = db.Ping(); err != nil {
 		log.Fatal(err)
 	}
+	log.Println("Connected to database")
 }
