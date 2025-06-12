@@ -2,9 +2,9 @@ package main
 
 import "database/sql"
 
-func createStudent(s Student) error {
+func createStudent(Name, Email string, Age int) error {
 	query := "INSERT INTO students (name, age, email) VALUES (?, ?, ?)"
-	_, err := db.Exec(query, s.Name, s.Age, s.Email)
+	_, err := db.Exec(query, Name, Age, Email)
 	return err
 }
 
@@ -41,9 +41,9 @@ func getStudentByName(name string) (*Student, error) {
 	return &s, nil
 }
 
-func updateStudent(s Student) error {
-	query := "UPDATE students SET name=?, age=?, email=? WHERE id=?"
-	_, err := db.Exec(query, s.Name, s.Age, s.Email, s.ID)
+func updateStudent(name, newName string) error {
+	query := "UPDATE students SET name=? WHERE name=?"
+	_, err := db.Exec(query, newName, name)
 	return err
 }
 

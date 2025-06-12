@@ -7,5 +7,4 @@ CREATE TABLE IF NOT EXISTS students (
     age INT NOT NULL,
     email VARCHAR(100) UNIQUE
 );
-INSERT INTO students (name, age, email) VALUES ('Alice', 22, 'alice@example.com');
-INSERT INTO students (name, age, email) VALUES ('Bob', 25, 'bob@example.com');
+

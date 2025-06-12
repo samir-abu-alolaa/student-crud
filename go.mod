@@ -1,4 +1,4 @@
-module github.com/Samir-Abu-Alolaa/student-crud
+module student-crud
 
 go 1.23.5
 
